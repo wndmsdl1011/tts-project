@@ -1,0 +1,259 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 새로운 스타일 추가 */
+
+/* 모드 선택 버튼 */
+.mode-selector {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.mode-selector button {
+  padding: 10px 20px;
+  border: 2px solid #61dafb;
+  background-color: transparent;
+  color: #61dafb;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.mode-selector button:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+.mode-selector button.active {
+  background-color: #61dafb;
+  color: #282c34;
+  font-weight: bold;
+}
+
+/* 텍스트 영역 */
+textarea {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px 0;
+  padding: 15px;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 16px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #21a1c4;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.3);
+}
+
+/* 음성 복제 컨트롤 */
+.voice-clone-controls {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px 0;
+  padding: 20px;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+.file-upload, .language-select {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.file-upload label, .language-select label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #61dafb;
+}
+
+.file-upload input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: white;
+  cursor: pointer;
+}
+
+.language-select select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 16px;
+}
+
+/* 버튼 스타일 */
+button {
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  padding: 15px 30px;
+  margin: 20px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #21a1c4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background-color: #666;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 에러 메시지 */
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0;
+  max-width: 600px;
+}
+
+/* 오디오 플레이어 컨테이너 */
+.audio-player-container {
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  background-color: rgba(97, 218, 251, 0.1);
+  max-width: 600px;
+}
+
+.audio-player-container h3 {
+  margin-top: 0;
+  color: #61dafb;
+}
+
+.audio-player-container audio {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.audio-player-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.audio-player-container a:hover {
+  background-color: #21a1c4;
+  transform: translateY(-2px);
+}
+
+/* 사용법 안내 */
+.instructions {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: rgba(97, 218, 251, 0.05);
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.instructions h3 {
+  color: #61dafb;
+  margin-top: 0;
+  text-align: center;
+}
+
+.instructions ul, .instructions ol {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.instructions li {
+  margin: 8px 0;
+}
+
+.instructions strong {
+  color: #61dafb;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 15px;
+    font-size: calc(8px + 2vmin);
+  }
+  
+  textarea, .voice-clone-controls, .audio-player-container, .instructions {
+    width: 95%;
+  }
+  
+  .mode-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mode-selector button {
+    width: 200px;
+    margin: 5px 0;
+  }
+}
