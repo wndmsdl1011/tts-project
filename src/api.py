@@ -390,10 +390,6 @@ def get_model_info():
 def root():
     return {"message": "Voice Cloning TTS API", "version": "3.0.0"}
 
-@app.get("/health")
-def health_check():
-    return {"status": "healthy", "model_loaded": tts_model is not None}
-
 # --- 서버 실행 ---
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8005)
