@@ -1,0 +1,101 @@
+{
+    "run_name": "korean-tts-glow-v1",
+    "output_path": "C:/Users/wndmsdl/tts_project/models/",
+    "logger_uri": null,
+    "log_model_path": false,
+    "audio": {
+        "fft_size": 1024,
+        "win_length": 1024,
+        "hop_length": 256,
+        "frame_shift_ms": null,
+        "frame_length_ms": null,
+        "stft_pad_mode": "reflect",
+        "sample_rate": 22050,
+        "resample": false,
+        "preemphasis": 0.97,
+        "ref_level_db": 20,
+        "do_trim_silence": true,
+        "trim_db": 45,
+        "power": 1.5,
+        "griffin_lim_iters": 60,
+        "num_mels": 80,
+        "mel_fmin": 0.0,
+        "mel_fmax": 8000.0,
+        "spec_gain": 1.0,
+        "signal_norm": true,
+        "min_level_db": -100,
+        "symmetric_norm": true,
+        "max_norm": 4.0,
+        "clip_norm": true,
+        "stats_path": null
+    },
+    "distributed": {
+        "backend": "nccl",
+        "group_id": ""
+    },
+    "characters": {
+        "pad": "_",
+        "eos": "~",
+        "bos": "^",
+        "phonemes": null,
+        "punctuations":"!,.? ",
+        "characters":"ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅔㅚㅟㅒㅖㅢㄳㄵㄶㄺㄻㄼㄽㄾㄿㅀㅄ",
+        "graphemes": null
+    },
+    "use_phonemes": false,
+    "phoneme_language": "ko",
+    "phoneme_cache_path": "C:/Users/wndmsdl/tts_project/phoneme_cache/",
+    "batch_size": 32,
+    "eval_batch_size": 16,
+    "num_loader_workers": 4,
+    "num_eval_loader_workers": 4,
+    "run_eval": true,
+    "test_delay_epochs": 0,
+    "epochs": 1000,
+    "save_step": 1000,
+    "print_step": 25,
+    "plot_step": 100,
+    "model_param_stats": false,
+    "text_cleaner": "korean_cleaners",
+    "use_speaker_embedding": false,
+    "dataset": "ljspeech",
+    "dataset_config": {
+        "name": "ljspeech",
+        "path": "C:/Users/wndmsdl/tts_project/data/",
+        "meta_file_train": "metadata.csv",
+        "meta_file_val": null
+    },
+    "model": "glow_tts",
+    "model_params": {
+        "num_chars": 80, 
+        "out_channels": 80,
+        "hidden_channels": 192,
+        "hidden_channels_dp": 192,
+        "encoder_type": "ffn",
+        "encoder_params": {
+            "hidden_channels_ffn": 768,
+            "num_heads": 2,
+            "num_layers": 6,
+            "dropout_p": 0.1
+        },
+        "decoder_type": "ffn",
+        "decoder_params": {
+            "hidden_channels_ffn": 768,
+            "num_heads": 2,
+            "num_layers": 6,
+            "dropout_p": 0.1
+        },
+        "use_rel_pos_attn": true,
+        "num_flow_blocks": 12,
+        "num_flow_layers": 4,
+        "flow_hidden_channels": 192,
+        "flow_kernel_size": 5,
+        "flow_dropout_p": 0.1,
+        "use_sdp": true
+    },
+    "test_sentences": [
+        "안녕하세요, 제 목소리가 잘 들리시나요?",
+        "이것은 음성 합성 테스트 문장입니다.",
+        "코키 TTS를 사용하여 만들었습니다."
+    ]
+}
